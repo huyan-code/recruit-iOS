@@ -20,6 +20,10 @@
 		DCF7BB3926B23ED000AE0E0E /* DIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF7BB3826B23ED000AE0E0E /* DIManager.swift */; };
 		EEF2EF2E2C47392400BB6F21 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF2EF2D2C47392400BB6F21 /* Transaction.swift */; };
 		EEF2EF312C4739D400BB6F21 /* TransactionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF2EF302C4739D400BB6F21 /* TransactionService.swift */; };
+		EEF2EF332C473CD000BB6F21 /* TransactionServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF2EF322C473CD000BB6F21 /* TransactionServiceTests.swift */; };
+		EEF2EF352C473D1600BB6F21 /* MockRestClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF2EF342C473D1600BB6F21 /* MockRestClient.swift */; };
+		EEF2EF362C473D7700BB6F21 /* TransactionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF2EF302C4739D400BB6F21 /* TransactionService.swift */; };
+		EEF2EF372C473D9400BB6F21 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF2EF2D2C47392400BB6F21 /* Transaction.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +62,8 @@
 		DCF7BB3826B23ED000AE0E0E /* DIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIManager.swift; sourceTree = "<group>"; };
 		EEF2EF2D2C47392400BB6F21 /* Transaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		EEF2EF302C4739D400BB6F21 /* TransactionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionService.swift; sourceTree = "<group>"; };
+		EEF2EF322C473CD000BB6F21 /* TransactionServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionServiceTests.swift; sourceTree = "<group>"; };
+		EEF2EF342C473D1600BB6F21 /* MockRestClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRestClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,7 +134,9 @@
 			isa = PBXGroup;
 			children = (
 				DCF7BB1A26B23E0200AE0E0E /* ASBInterviewExerciseTests.swift */,
+				EEF2EF322C473CD000BB6F21 /* TransactionServiceTests.swift */,
 				DCF7BB1C26B23E0200AE0E0E /* Info.plist */,
+				EEF2EF342C473D1600BB6F21 /* MockRestClient.swift */,
 			);
 			path = ASBInterviewExerciseTests;
 			sourceTree = "<group>";
@@ -308,7 +316,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EEF2EF352C473D1600BB6F21 /* MockRestClient.swift in Sources */,
+				EEF2EF332C473CD000BB6F21 /* TransactionServiceTests.swift in Sources */,
+				EEF2EF362C473D7700BB6F21 /* TransactionService.swift in Sources */,
 				DCF7BB1B26B23E0200AE0E0E /* ASBInterviewExerciseTests.swift in Sources */,
+				EEF2EF372C473D9400BB6F21 /* Transaction.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
