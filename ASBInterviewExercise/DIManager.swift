@@ -28,5 +28,11 @@ class ServiceAssembly: Assembly {
         container.register(RestClient.self) { resolver in
             return RestClient()
         }.inObjectScope(.transient)
+        
+        // register TransactionService
+        container.register(TransactionService.self) { resolver in
+            let restClient = resolver.resolve(RestClient.self)!
+            return TransactionService(restClient:restClient)
+        }.inObjectScope(.transient)
     }
 }
