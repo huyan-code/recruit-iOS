@@ -19,6 +19,7 @@
 		DCF7BB3726B23EB800AE0E0E /* RestClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF7BB3626B23EB800AE0E0E /* RestClient.swift */; };
 		DCF7BB3926B23ED000AE0E0E /* DIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF7BB3826B23ED000AE0E0E /* DIManager.swift */; };
 		EEF2EF2E2C47392400BB6F21 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF2EF2D2C47392400BB6F21 /* Transaction.swift */; };
+		EEF2EF312C4739D400BB6F21 /* TransactionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF2EF302C4739D400BB6F21 /* TransactionService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		DCF7BB3626B23EB800AE0E0E /* RestClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestClient.swift; sourceTree = "<group>"; };
 		DCF7BB3826B23ED000AE0E0E /* DIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIManager.swift; sourceTree = "<group>"; };
 		EEF2EF2D2C47392400BB6F21 /* Transaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		EEF2EF302C4739D400BB6F21 /* TransactionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 				DCF7BB0326B23DFF00AE0E0E /* AppDelegate.swift */,
 				DCF7BB0526B23DFF00AE0E0E /* SceneDelegate.swift */,
 				DCF7BB0726B23DFF00AE0E0E /* RootViewController.swift */,
+				EEF2EF2F2C47399F00BB6F21 /* Services */,
 				EEF2EF2C2C47390A00BB6F21 /* Models */,
 				DCF7BB0926B23DFF00AE0E0E /* Main.storyboard */,
 				DCF7BB0C26B23E0200AE0E0E /* Assets.xcassets */,
@@ -145,6 +148,14 @@
 				EEF2EF2D2C47392400BB6F21 /* Transaction.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		EEF2EF2F2C47399F00BB6F21 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				EEF2EF302C4739D400BB6F21 /* TransactionService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -285,6 +296,7 @@
 			files = (
 				DCF7BB3726B23EB800AE0E0E /* RestClient.swift in Sources */,
 				DCF7BB0826B23DFF00AE0E0E /* RootViewController.swift in Sources */,
+				EEF2EF312C4739D400BB6F21 /* TransactionService.swift in Sources */,
 				EEF2EF2E2C47392400BB6F21 /* Transaction.swift in Sources */,
 				DCF7BB0426B23DFF00AE0E0E /* AppDelegate.swift in Sources */,
 				DCF7BB0626B23DFF00AE0E0E /* SceneDelegate.swift in Sources */,
