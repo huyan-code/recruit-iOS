@@ -47,6 +47,7 @@ class TransactionTableCell: UITableViewCell {
         
         setupSubviews()
         setupConstraints()
+        setupAccessibility()
         accessoryType = .disclosureIndicator // Add disclosure indicator
     }
     
@@ -103,5 +104,26 @@ class TransactionTableCell: UITableViewCell {
             iconImageView.image = UIImage(named: "icon-debit")
             amountLabel.textColor = .red
         }
+        
+        // Set accessibility label for the entire cell
+        let creditDebitText = isCredit ? "Credit" : "Debit"
+        self.accessibilityLabel = "\(summary), \(date), \(creditDebitText) amount \(amount)"
+    }
+    
+    // MARK: - Accessibility
+    private func setupAccessibility() {
+        summaryLabel.isAccessibilityElement = true
+        summaryLabel.accessibilityLabel = "Summary"
+        
+        dateLabel.isAccessibilityElement = true
+        dateLabel.accessibilityLabel = "Date"
+        
+        amountLabel.isAccessibilityElement = true
+        amountLabel.accessibilityLabel = "Amount"
+        
+        iconImageView.isAccessibilityElement = true
+        iconImageView.accessibilityLabel = "Transaction type"
+        
+        self.isAccessibilityElement = true
     }
 }

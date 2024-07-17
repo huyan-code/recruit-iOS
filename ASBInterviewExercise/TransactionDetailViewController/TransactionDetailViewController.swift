@@ -71,6 +71,7 @@ class TransactionDetailViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
         
         configureUI()
+        configureAccessibility()
     }
     
     required init?(coder: NSCoder) {
@@ -160,5 +161,34 @@ class TransactionDetailViewController: UIViewController {
         } else {
             amountLabel.text = String(format: "Credit: $%.2f", transaction.credit)
         }
+    }
+    
+    private func configureAccessibility() {
+        iconImageView.isAccessibilityElement = true
+        iconImageView.accessibilityLabel = transaction.isDebit ? "Debit Icon" : "Credit Icon"
+        
+        idLabel.isAccessibilityElement = true
+        idLabel.accessibilityLabel = "Transaction ID"
+        idLabel.accessibilityValue = "\(transaction.id)"
+        
+        dateLabel.isAccessibilityElement = true
+        dateLabel.accessibilityLabel = "Transaction Date"
+        dateLabel.accessibilityValue = transaction.date.description
+        
+        summaryLabel.isAccessibilityElement = true
+        summaryLabel.accessibilityLabel = "Summary"
+        summaryLabel.accessibilityValue = transaction.summary
+        
+        amountLabel.isAccessibilityElement = true
+        amountLabel.accessibilityLabel = transaction.isDebit ? "Debit Amount" : "Credit Amount"
+        amountLabel.accessibilityValue = transaction.isDebit ? "\(transaction.debit)" : "\(transaction.credit)"
+        
+        gstRateLabel.isAccessibilityElement = true
+        gstRateLabel.accessibilityLabel = "GST Rate"
+        gstRateLabel.accessibilityValue = "\(15)%"
+        
+        gstValueLabel.isAccessibilityElement = true
+        gstValueLabel.accessibilityLabel = "GST Value"
+        gstValueLabel.accessibilityValue = String(format: "$%.2f", transaction.gst)
     }
 }
