@@ -29,6 +29,12 @@
 		EEF2EF3F2C4741F000BB6F21 /* TransactionTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF2EF3E2C4741F000BB6F21 /* TransactionTableCell.swift */; };
 		EEF2EF422C47422100BB6F21 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = EEF2EF412C47422100BB6F21 /* SnapKit */; };
 		EEF2EF452C47472E00BB6F21 /* FetchingStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF2EF442C47472E00BB6F21 /* FetchingStatusView.swift */; };
+		EEF2EF472C4748FB00BB6F21 /* TransactionTableViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF2EF462C4748FB00BB6F21 /* TransactionTableViewUITests.swift */; };
+		EEF2EF482C47491800BB6F21 /* TransactionTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF2EF3C2C4741B700BB6F21 /* TransactionTableView.swift */; };
+		EEF2EF492C47492000BB6F21 /* TransactionTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF2EF3E2C4741F000BB6F21 /* TransactionTableCell.swift */; };
+		EEF2EF4A2C47492800BB6F21 /* TransactionTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF2EF392C473E2200BB6F21 /* TransactionTableViewModel.swift */; };
+		EEF2EF4B2C47496D00BB6F21 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF2EF2D2C47392400BB6F21 /* Transaction.swift */; };
+		EEF2EF4E2C474C5C00BB6F21 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = EEF2EF4D2C474C5C00BB6F21 /* SnapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +79,7 @@
 		EEF2EF3C2C4741B700BB6F21 /* TransactionTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTableView.swift; sourceTree = "<group>"; };
 		EEF2EF3E2C4741F000BB6F21 /* TransactionTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTableCell.swift; sourceTree = "<group>"; };
 		EEF2EF442C47472E00BB6F21 /* FetchingStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchingStatusView.swift; sourceTree = "<group>"; };
+		EEF2EF462C4748FB00BB6F21 /* TransactionTableViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTableViewUITests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EEF2EF4E2C474C5C00BB6F21 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,6 +117,7 @@
 				DCF7BB1926B23E0200AE0E0E /* ASBInterviewExerciseTests */,
 				DCF7BB2426B23E0200AE0E0E /* ASBInterviewExerciseUITests */,
 				DCF7BB0126B23DFE00AE0E0E /* Products */,
+				EEF2EF4C2C474C5C00BB6F21 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -158,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				DCF7BB2526B23E0200AE0E0E /* ASBInterviewExerciseUITests.swift */,
+				EEF2EF462C4748FB00BB6F21 /* TransactionTableViewUITests.swift */,
 				DCF7BB2726B23E0200AE0E0E /* Info.plist */,
 			);
 			path = ASBInterviewExerciseUITests;
@@ -202,6 +212,13 @@
 				EEF2EF442C47472E00BB6F21 /* FetchingStatusView.swift */,
 			);
 			path = NetworkStatusView;
+			sourceTree = "<group>";
+		};
+		EEF2EF4C2C474C5C00BB6F21 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,6 +277,9 @@
 				DCF7BB2326B23E0200AE0E0E /* PBXTargetDependency */,
 			);
 			name = ASBInterviewExerciseUITests;
+			packageProductDependencies = (
+				EEF2EF4D2C474C5C00BB6F21 /* SnapKit */,
+			);
 			productName = ASBInterviewExerciseUITests;
 			productReference = DCF7BB2126B23E0200AE0E0E /* ASBInterviewExerciseUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
@@ -372,7 +392,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EEF2EF482C47491800BB6F21 /* TransactionTableView.swift in Sources */,
+				EEF2EF472C4748FB00BB6F21 /* TransactionTableViewUITests.swift in Sources */,
+				EEF2EF4B2C47496D00BB6F21 /* Transaction.swift in Sources */,
 				DCF7BB2626B23E0200AE0E0E /* ASBInterviewExerciseUITests.swift in Sources */,
+				EEF2EF4A2C47492800BB6F21 /* TransactionTableViewModel.swift in Sources */,
+				EEF2EF492C47492000BB6F21 /* TransactionTableCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -710,6 +735,11 @@
 			productName = Swinject;
 		};
 		EEF2EF412C47422100BB6F21 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EEF2EF402C47422100BB6F21 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		EEF2EF4D2C474C5C00BB6F21 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = EEF2EF402C47422100BB6F21 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
