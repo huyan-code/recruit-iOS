@@ -21,7 +21,7 @@ class FetchingStatusView: UIView {
     private var fetchingTimer: Timer?
     private var fetchingDotsCount = 0
     
-    // 定义一个回调属性
+    // on network errors, tap to trigger this callback
     var onReloadingRequest: (() -> Void)?
     
     var status: Status = .success {

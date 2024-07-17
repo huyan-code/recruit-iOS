@@ -7,6 +7,7 @@
 
 import Foundation
 
+// the service containing specific http request
 class TransactionService {
     private let restClient: RestClient
     
@@ -17,6 +18,7 @@ class TransactionService {
     func fetchTransactions(completion: @escaping (Result<[Transaction], Error>) -> Void) {
         let urlString = "https://gist.githubusercontent.com/Josh-Ng/500f2716604dc1e8e2a3c6d31ad01830/raw/4d73acaa7caa1167676445c922835554c5572e82/test-data.json"
         guard let url = URL(string: urlString) else {
+            // a custom error for invalid url
             let err = NSError(domain: "TransactionService", code: 999998, userInfo: [NSLocalizedDescriptionKey: "999998: invalid url"])
             completion(.failure(err))
             return
@@ -31,6 +33,7 @@ class TransactionService {
             }
             
             guard let data = data else {
+                // a custom error for resp data is nil
                 let err = NSError(domain: "TransactionService", code: 999999, userInfo: [NSLocalizedDescriptionKey: "999999: resp data nil"])
                 completion(.failure(err))
                 return

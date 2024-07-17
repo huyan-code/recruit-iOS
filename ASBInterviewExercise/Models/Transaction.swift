@@ -7,7 +7,7 @@
 
 import Foundation
 
-// Transaction Model
+// Transaction Model represents for a transaction
 struct Transaction: Codable {
     let id: Int
     let transactionDate: String

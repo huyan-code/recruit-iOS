@@ -7,17 +7,20 @@
 
 import UIKit
 
+// the table view to display transactions
 class TransactionTableView: UIView {
     private let tableView = UITableView()
     private let tableCellId = "TransactionTableCell"
     var isInteractionEnabled = true
 
+    // the view model
     var viewModel: TransactionTableViewModel? {
         didSet {
             reloadData()
         }
     }
     
+    // the callback when tapping a cell
     var didSelectTransaction: ((Transaction) -> Void)?
     
     override init(frame: CGRect) {
@@ -48,6 +51,7 @@ class TransactionTableView: UIView {
     }
 }
 
+// manage table view delegate and datasource methods
 extension TransactionTableView: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel?.transactions.count ?? 0
