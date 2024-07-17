@@ -20,7 +20,9 @@ class TransactionTableCell: UITableViewCell {
     let summaryLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 17, weight: .semibold)
-        label.textColor = .black
+        label.textColor = UIColor { traitCollection in
+            return traitCollection.userInterfaceStyle == .dark ? .white : .black
+        }
         label.numberOfLines = 3
         label.lineBreakMode = .byTruncatingTail
         return label
@@ -29,14 +31,18 @@ class TransactionTableCell: UITableViewCell {
     let dateLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 14)
-        label.textColor = .gray
+        label.textColor = UIColor { traitCollection in
+            return traitCollection.userInterfaceStyle == .dark ? .lightGray : .gray
+        }
         return label
     }()
     
     let amountLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 17, weight: .medium)
-        label.textColor = .black
+        label.textColor = UIColor { traitCollection in
+            return traitCollection.userInterfaceStyle == .dark ? .white : .black
+        }
         label.textAlignment = .right
         return label
     }()
@@ -49,6 +55,11 @@ class TransactionTableCell: UITableViewCell {
         setupConstraints()
         setupAccessibility()
         accessoryType = .disclosureIndicator // Add disclosure indicator
+        
+        // Set the background color to adjust for light/dark mode
+        self.contentView.backgroundColor = UIColor { traitCollection in
+            return traitCollection.userInterfaceStyle == .dark ? .black : .white
+        }
     }
     
     required init?(coder: NSCoder) {
@@ -99,10 +110,10 @@ class TransactionTableCell: UITableViewCell {
         
         if isCredit {
             iconImageView.image = UIImage(named: "icon-credit")
-            amountLabel.textColor = .green
+            amountLabel.textColor = .systemGreen
         } else {
             iconImageView.image = UIImage(named: "icon-debit")
-            amountLabel.textColor = .red
+            amountLabel.textColor = .systemRed
         }
         
         // Set accessibility label for the entire cell

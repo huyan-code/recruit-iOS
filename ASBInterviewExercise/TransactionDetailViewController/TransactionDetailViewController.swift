@@ -82,7 +82,8 @@ class TransactionDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Transaction Detail"
-        view.backgroundColor = .white
+        view.backgroundColor = .systemBackground // Use system background color
+        
         setupSubviews()
         setupConstraints()
     }
@@ -142,10 +143,10 @@ class TransactionDetailViewController: UIViewController {
     private func configureUI() {
         if transaction.isDebit {
             iconImageView.image = UIImage(named: "icon-debit")
-            amountLabel.textColor = .red
+            amountLabel.textColor = .systemRed
         } else {
             iconImageView.image = UIImage(named: "icon-credit")
-            amountLabel.textColor = .green
+            amountLabel.textColor = .systemGreen
         }
         
         idLabel.text = "Transaction ID: \(transaction.id)"
