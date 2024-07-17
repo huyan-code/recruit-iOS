@@ -35,6 +35,7 @@
 		EEF2EF4A2C47492800BB6F21 /* TransactionTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF2EF392C473E2200BB6F21 /* TransactionTableViewModel.swift */; };
 		EEF2EF4B2C47496D00BB6F21 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF2EF2D2C47392400BB6F21 /* Transaction.swift */; };
 		EEF2EF4E2C474C5C00BB6F21 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = EEF2EF4D2C474C5C00BB6F21 /* SnapKit */; };
+		EEF2EF512C474CDB00BB6F21 /* TransactionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF2EF502C474CDB00BB6F21 /* TransactionDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 		EEF2EF3E2C4741F000BB6F21 /* TransactionTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTableCell.swift; sourceTree = "<group>"; };
 		EEF2EF442C47472E00BB6F21 /* FetchingStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchingStatusView.swift; sourceTree = "<group>"; };
 		EEF2EF462C4748FB00BB6F21 /* TransactionTableViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTableViewUITests.swift; sourceTree = "<group>"; };
+		EEF2EF502C474CDB00BB6F21 /* TransactionDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +139,7 @@
 				DCF7BB0326B23DFF00AE0E0E /* AppDelegate.swift */,
 				DCF7BB0526B23DFF00AE0E0E /* SceneDelegate.swift */,
 				DCF7BB0726B23DFF00AE0E0E /* RootViewController.swift */,
+				EEF2EF4F2C474CAA00BB6F21 /* TransactionDetailViewController */,
 				EEF2EF432C47469A00BB6F21 /* NetworkStatusView */,
 				EEF2EF3B2C47419100BB6F21 /* TransactionTableView */,
 				EEF2EF382C473DF800BB6F21 /* ViewModels */,
@@ -219,6 +222,14 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EEF2EF4F2C474CAA00BB6F21 /* TransactionDetailViewController */ = {
+			isa = PBXGroup;
+			children = (
+				EEF2EF502C474CDB00BB6F21 /* TransactionDetailViewController.swift */,
+			);
+			path = TransactionDetailViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -366,6 +377,7 @@
 				DCF7BB3726B23EB800AE0E0E /* RestClient.swift in Sources */,
 				DCF7BB0826B23DFF00AE0E0E /* RootViewController.swift in Sources */,
 				EEF2EF312C4739D400BB6F21 /* TransactionService.swift in Sources */,
+				EEF2EF512C474CDB00BB6F21 /* TransactionDetailViewController.swift in Sources */,
 				EEF2EF2E2C47392400BB6F21 /* Transaction.swift in Sources */,
 				DCF7BB0426B23DFF00AE0E0E /* AppDelegate.swift in Sources */,
 				DCF7BB0626B23DFF00AE0E0E /* SceneDelegate.swift in Sources */,

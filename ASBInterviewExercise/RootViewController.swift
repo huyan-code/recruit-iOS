@@ -45,7 +45,7 @@ class RootViewController: UIViewController {
         
         // response to did select row of the transaction table
         transactionTableView.didSelectTransaction = { [weak self] transaction in
-            // todo: launch the detail vc
+            self?.pushTransactionDetailVC(transaction: transaction)
         }
         
         // start the http request for the transactions
@@ -60,6 +60,14 @@ class RootViewController: UIViewController {
         }
     }
 
+}
+
+// push the transaction detail view controller
+extension RootViewController {
+    func pushTransactionDetailVC(transaction:Transaction) {
+        let detailVC = TransactionDetailViewController(transaction: transaction)
+        self.navigationController?.pushViewController(detailVC, animated: true)
+    }
 }
 
 // manage the state of the "Fetching Data..." status view
