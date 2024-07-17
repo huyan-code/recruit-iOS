@@ -15,6 +15,8 @@ class RootViewController: UIViewController {
     let networkStatusView = FetchingStatusView()
     // the view model for the table view of transactions
     var transactionTableViewModel: TransactionTableViewModel!
+    // a pointer to the navi bar item 'reload'
+    weak var barBtnItmReload: UIBarButtonItem?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,11 +37,17 @@ class RootViewController: UIViewController {
             DispatchQueue.main.async {
                 switch state {
                 case .success:
+                    // pass viewModel to TableView
                     self?.transactionTableView.viewModel = self?.transactionTableViewModel
+                    self?.barBtnItmReload?.isEnabled = true
+                case .loading:
+                    self?.barBtnItmReload?.isEnabled = false
+                case .failure, .idle:
+                    self?.barBtnItmReload?.isEnabled = true
                     self?.updateStatusView(for: state)
-                default:
-                    self?.updateStatusView(for: state)
+
                 }
+                self?.updateStatusView(for: state)
             }
         }
         
@@ -50,6 +58,14 @@ class RootViewController: UIViewController {
         
         // start the http request for the transactions
         transactionTableViewModel.fetchTransactions()
+        
+        // be able to reload on tap, after network errors
+        networkStatusView.onReloadingRequest = { [weak self] in
+            self?.transactionTableViewModel.fetchTransactions()
+        }
+        
+        // setup the navigation bar item
+        setupNavigationBar()
     }
 
     // setup the transaction table
@@ -60,6 +76,20 @@ class RootViewController: UIViewController {
         }
     }
 
+}
+
+// manage navigation bar buttons
+extension RootViewController {
+    // setup navigation bar with Reload button
+    func setupNavigationBar() {
+        let itm = UIBarButtonItem(title: "Reload", style: .plain, target: self, action: #selector(onTapNaviBarReload))
+        navigationItem.rightBarButtonItem = itm
+        self.barBtnItmReload = itm
+    }
+    
+    @objc func onTapNaviBarReload() {
+        transactionTableViewModel.fetchTransactions()
+    }
 }
 
 // push the transaction detail view controller

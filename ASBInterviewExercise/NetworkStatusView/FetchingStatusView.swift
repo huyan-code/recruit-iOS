@@ -21,11 +21,22 @@ class FetchingStatusView: UIView {
     private var fetchingTimer: Timer?
     private var fetchingDotsCount = 0
     
+    // 定义一个回调属性
+    var onReloadingRequest: (() -> Void)?
+    
     var status: Status = .success {
         didSet {
             updateStatus()
         }
     }
+    
+    private let blurEffectView: UIVisualEffectView = {
+        let blurEffect = UIBlurEffect(style: .dark)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.layer.cornerRadius = 8
+        blurEffectView.clipsToBounds = true
+        return blurEffectView
+    }()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -38,33 +49,48 @@ class FetchingStatusView: UIView {
     }
 
     private func setupView() {
-        addSubview(statusLabel)
+        // Add blur effect view
+        addSubview(blurEffectView)
+        blurEffectView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+        
+        // Add status label
+        blurEffectView.contentView.addSubview(statusLabel)
+        statusLabel.numberOfLines = 0
         statusLabel.textAlignment = .center
-        statusLabel.textColor = .gray
+        statusLabel.textColor = .white
         statusLabel.font = UIFont.systemFont(ofSize: 16)
         
         statusLabel.snp.makeConstraints { make in
             make.center.equalToSuperview()
+            make.width.equalToSuperview().multipliedBy(0.8)
         }
         
-        isUserInteractionEnabled = false
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap))
+        addGestureRecognizer(tapGesture)
     }
 
     private func updateStatus() {
+        let tip = "CHECK NETWORK SETTINGS, THEN TAP ME TO RELOAD."
         switch status {
         case .noNetwork:
-            statusLabel.text = "No network connection, please check."
-            statusLabel.isHidden = false
+            statusLabel.text = tip
+            self.isHidden = false
+            isUserInteractionEnabled = true
             stopFetchingTimer()
         case .fetching:
             startFetchingTimer()
-            statusLabel.isHidden = false
+            self.isHidden = false
+            isUserInteractionEnabled = false
         case .success:
-            statusLabel.isHidden = true
+            self.isHidden = true
+            isUserInteractionEnabled = false
             stopFetchingTimer()
         case .failure(let errorMessage):
-            statusLabel.text = errorMessage
-            statusLabel.isHidden = false
+            statusLabel.text = "\(errorMessage)\n\(tip)"
+            self.isHidden = false
+            isUserInteractionEnabled = true
             stopFetchingTimer()
         }
     }
@@ -86,7 +112,17 @@ class FetchingStatusView: UIView {
         statusLabel.text = "Fetching Data\(dots)"
     }
 
+    @objc private func handleTap() {
+        switch status {
+        case .noNetwork, .failure:
+            onReloadingRequest?()
+        case .fetching, .success:
+            break
+        }
+    }
+
     deinit {
         stopFetchingTimer()
     }
 }
+
