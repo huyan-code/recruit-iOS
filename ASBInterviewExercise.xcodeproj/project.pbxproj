@@ -25,6 +25,8 @@
 		EEF2EF362C473D7700BB6F21 /* TransactionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF2EF302C4739D400BB6F21 /* TransactionService.swift */; };
 		EEF2EF372C473D9400BB6F21 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF2EF2D2C47392400BB6F21 /* Transaction.swift */; };
 		EEF2EF3A2C473E2200BB6F21 /* TransactionTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF2EF392C473E2200BB6F21 /* TransactionTableViewModel.swift */; };
+		EEF2EF3D2C4741B700BB6F21 /* TransactionTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF2EF3C2C4741B700BB6F21 /* TransactionTableView.swift */; };
+		EEF2EF3F2C4741F000BB6F21 /* TransactionTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF2EF3E2C4741F000BB6F21 /* TransactionTableCell.swift */; };
 		EEF2EF422C47422100BB6F21 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = EEF2EF412C47422100BB6F21 /* SnapKit */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +69,8 @@
 		EEF2EF322C473CD000BB6F21 /* TransactionServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionServiceTests.swift; sourceTree = "<group>"; };
 		EEF2EF342C473D1600BB6F21 /* MockRestClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRestClient.swift; sourceTree = "<group>"; };
 		EEF2EF392C473E2200BB6F21 /* TransactionTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTableViewModel.swift; sourceTree = "<group>"; };
+		EEF2EF3C2C4741B700BB6F21 /* TransactionTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTableView.swift; sourceTree = "<group>"; };
+		EEF2EF3E2C4741F000BB6F21 /* TransactionTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTableCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +126,7 @@
 				DCF7BB0326B23DFF00AE0E0E /* AppDelegate.swift */,
 				DCF7BB0526B23DFF00AE0E0E /* SceneDelegate.swift */,
 				DCF7BB0726B23DFF00AE0E0E /* RootViewController.swift */,
+				EEF2EF3B2C47419100BB6F21 /* TransactionTableView */,
 				EEF2EF382C473DF800BB6F21 /* ViewModels */,
 				EEF2EF2F2C47399F00BB6F21 /* Services */,
 				EEF2EF2C2C47390A00BB6F21 /* Models */,
@@ -177,6 +182,15 @@
 				EEF2EF392C473E2200BB6F21 /* TransactionTableViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		EEF2EF3B2C47419100BB6F21 /* TransactionTableView */ = {
+			isa = PBXGroup;
+			children = (
+				EEF2EF3C2C4741B700BB6F21 /* TransactionTableView.swift */,
+				EEF2EF3E2C4741F000BB6F21 /* TransactionTableCell.swift */,
+			);
+			path = TransactionTableView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -317,12 +331,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EEF2EF3D2C4741B700BB6F21 /* TransactionTableView.swift in Sources */,
 				DCF7BB3726B23EB800AE0E0E /* RestClient.swift in Sources */,
 				DCF7BB0826B23DFF00AE0E0E /* RootViewController.swift in Sources */,
 				EEF2EF312C4739D400BB6F21 /* TransactionService.swift in Sources */,
 				EEF2EF2E2C47392400BB6F21 /* Transaction.swift in Sources */,
 				DCF7BB0426B23DFF00AE0E0E /* AppDelegate.swift in Sources */,
 				DCF7BB0626B23DFF00AE0E0E /* SceneDelegate.swift in Sources */,
+				EEF2EF3F2C4741F000BB6F21 /* TransactionTableCell.swift in Sources */,
 				EEF2EF3A2C473E2200BB6F21 /* TransactionTableViewModel.swift in Sources */,
 				DCF7BB3926B23ED000AE0E0E /* DIManager.swift in Sources */,
 			);
