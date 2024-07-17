@@ -25,6 +25,7 @@
 		EEF2EF362C473D7700BB6F21 /* TransactionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF2EF302C4739D400BB6F21 /* TransactionService.swift */; };
 		EEF2EF372C473D9400BB6F21 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF2EF2D2C47392400BB6F21 /* Transaction.swift */; };
 		EEF2EF3A2C473E2200BB6F21 /* TransactionTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF2EF392C473E2200BB6F21 /* TransactionTableViewModel.swift */; };
+		EEF2EF422C47422100BB6F21 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = EEF2EF412C47422100BB6F21 /* SnapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DCF7BB3526B23E3600AE0E0E /* Swinject in Frameworks */,
+				EEF2EF422C47422100BB6F21 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,6 +197,7 @@
 			name = ASBInterviewExercise;
 			packageProductDependencies = (
 				DCF7BB3426B23E3600AE0E0E /* Swinject */,
+				EEF2EF412C47422100BB6F21 /* SnapKit */,
 			);
 			productName = ASBInterviewExercise;
 			productReference = DCF7BB0026B23DFE00AE0E0E /* ASBInterviewExercise.app */;
@@ -269,6 +272,7 @@
 			mainGroup = DCF7BAF726B23DFE00AE0E0E;
 			packageReferences = (
 				DCF7BB3326B23E3600AE0E0E /* XCRemoteSwiftPackageReference "Swinject" */,
+				EEF2EF402C47422100BB6F21 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = DCF7BB0126B23DFE00AE0E0E /* Products */;
 			projectDirPath = "";
@@ -661,6 +665,14 @@
 				minimumVersion = 2.7.1;
 			};
 		};
+		EEF2EF402C47422100BB6F21 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -668,6 +680,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = DCF7BB3326B23E3600AE0E0E /* XCRemoteSwiftPackageReference "Swinject" */;
 			productName = Swinject;
+		};
+		EEF2EF412C47422100BB6F21 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EEF2EF402C47422100BB6F21 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
