@@ -28,6 +28,7 @@
 		EEF2EF3D2C4741B700BB6F21 /* TransactionTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF2EF3C2C4741B700BB6F21 /* TransactionTableView.swift */; };
 		EEF2EF3F2C4741F000BB6F21 /* TransactionTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF2EF3E2C4741F000BB6F21 /* TransactionTableCell.swift */; };
 		EEF2EF422C47422100BB6F21 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = EEF2EF412C47422100BB6F21 /* SnapKit */; };
+		EEF2EF452C47472E00BB6F21 /* FetchingStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF2EF442C47472E00BB6F21 /* FetchingStatusView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		EEF2EF392C473E2200BB6F21 /* TransactionTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTableViewModel.swift; sourceTree = "<group>"; };
 		EEF2EF3C2C4741B700BB6F21 /* TransactionTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTableView.swift; sourceTree = "<group>"; };
 		EEF2EF3E2C4741F000BB6F21 /* TransactionTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTableCell.swift; sourceTree = "<group>"; };
+		EEF2EF442C47472E00BB6F21 /* FetchingStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchingStatusView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 				DCF7BB0326B23DFF00AE0E0E /* AppDelegate.swift */,
 				DCF7BB0526B23DFF00AE0E0E /* SceneDelegate.swift */,
 				DCF7BB0726B23DFF00AE0E0E /* RootViewController.swift */,
+				EEF2EF432C47469A00BB6F21 /* NetworkStatusView */,
 				EEF2EF3B2C47419100BB6F21 /* TransactionTableView */,
 				EEF2EF382C473DF800BB6F21 /* ViewModels */,
 				EEF2EF2F2C47399F00BB6F21 /* Services */,
@@ -191,6 +194,14 @@
 				EEF2EF3E2C4741F000BB6F21 /* TransactionTableCell.swift */,
 			);
 			path = TransactionTableView;
+			sourceTree = "<group>";
+		};
+		EEF2EF432C47469A00BB6F21 /* NetworkStatusView */ = {
+			isa = PBXGroup;
+			children = (
+				EEF2EF442C47472E00BB6F21 /* FetchingStatusView.swift */,
+			);
+			path = NetworkStatusView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -340,6 +351,7 @@
 				DCF7BB0626B23DFF00AE0E0E /* SceneDelegate.swift in Sources */,
 				EEF2EF3F2C4741F000BB6F21 /* TransactionTableCell.swift in Sources */,
 				EEF2EF3A2C473E2200BB6F21 /* TransactionTableViewModel.swift in Sources */,
+				EEF2EF452C47472E00BB6F21 /* FetchingStatusView.swift in Sources */,
 				DCF7BB3926B23ED000AE0E0E /* DIManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
