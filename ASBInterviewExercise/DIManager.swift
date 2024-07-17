@@ -14,7 +14,7 @@ class DIManager {
     var assembler: Assembler
     
     init() {
-        let assembler = Assembler([ServiceAssembly()])
+        let assembler = Assembler([ServiceAssembly(), ViewModelAssembly()])
         self.assembler = assembler
     }
     
@@ -33,6 +33,16 @@ class ServiceAssembly: Assembly {
         container.register(TransactionService.self) { resolver in
             let restClient = resolver.resolve(RestClient.self)!
             return TransactionService(restClient:restClient)
+        }.inObjectScope(.transient)
+    }
+}
+
+class ViewModelAssembly: Assembly {
+    func assemble(container: Container) {
+        // register TransactionTableViewModel
+        container.register(TransactionTableViewModel.self) { resolver in
+            let transactionService = resolver.resolve(TransactionService.self)!
+            return TransactionTableViewModel(transactionService:transactionService)
         }.inObjectScope(.transient)
     }
 }
